@@ -1,13 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="cs">
+<head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-  <div style="width:100%; height:100%">
-    <webview src="https://www.topserialy.to/stargate-atlantis" autosize="on" style="min-width:900px; min-height:600px"></webview>
-  </div>
+    <title>Fast translate</title>
+</head>
+<body>
+<div style="width:100%; height:100%">
+    <!--<webview src="https://www.topserialy.to/stargate-atlantis" autosize="on" style="min-width:900px; min-height:600px"></webview>-->
+    <input id="dotaz" type="text" onkeyup="getAnswer()"/>
+    <button onclick="getAnswer()">send</button>
+    <div id="odpoved"></div>
+</div>
 
-  </body>
+</body>
+
+<script>
+    console.log("here!");
+    const req = require('request');
+    const cheerio = require('cheerio');
+    let $$$;
+
+    function getAnswer() {
+        console.log('function invoked');
+        reqString = document.getElementById("dotaz").value;
+        console.log(reqString);
+        req.get(`https://slovnik.seznam.cz/en-cz/?q=${reqString}`, (err, resp, body) => {
+            console.log(err, resp);
+            $$$ = cheerio.load(body);
+            document.getElementById('odpoved').innerHTML = $$$('#results').html();
+        })
+    }
+
+</script>
 </html>

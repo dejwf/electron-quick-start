@@ -1,22 +1,21 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "fast-translate",
+  "version": "0.0.1",
+  "description": "A dashboard for QA automation mobile testing",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/dejwf/electron-quick-start",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "qa",
+    "dashboard"
   ],
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^4.0.7"
+    "electron": "^4.0.7",
+    "cheerio": "^1.0.0-rc.2"
   }
 }
